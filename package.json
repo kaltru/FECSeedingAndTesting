@@ -1,7 +1,7 @@
 {
   "name": "fecseedingandtesting",
   "version": "1.0.0",
-  "description": "",
+  "description": "Repo to facilitate HiR training on front end capstone seeding databases, running unit testing, and examining unit coverage",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/szerfas1/FECSeedingAndTesting#readme",
   "dependencies": {
+    "chai": "^4.2.0",
     "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "mocha": "^5.2.0",
     "mysql2": "^1.6.1",
     "sequelize": "^4.41.0"
   }

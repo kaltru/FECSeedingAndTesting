@@ -20,6 +20,7 @@ orm
 /* MODELS (alphabetized) */
 /* ///////////////////// */
 
+// Ryan
 const Chef = orm.define('chef', {
   city: Sequelize.TEXT,
   description: Sequelize.TEXT,
@@ -41,6 +42,7 @@ const Chef = orm.define('chef', {
   },
 });
 
+// Stephen
 const Event = orm.define('event', {
   // foreign key: chefId
   date: Sequelize.STRING,
@@ -55,6 +57,7 @@ const Event = orm.define('event', {
     allowNull: false,
   },
 });
+ 
 
 const ItemEvent = orm.define('itemEvent', {
   // foreign keys: eventId, menuItemId, chefId
@@ -86,6 +89,7 @@ const MenuItem = orm.define('menuItem', {
   },
 });
 
+// Navira
 const Order = orm.define('order', {
   // foreign keys: itemEventId, userId, transactionId
   createdAt: {
@@ -98,6 +102,7 @@ const Order = orm.define('order', {
   },
 });
 
+// Uday
 const Rating = orm.define('rating', {
   // foreign keys: chefId, userId
   stars: Sequelize.INTEGER,
@@ -112,6 +117,7 @@ const Rating = orm.define('rating', {
   },
 });
 
+// Kalei
 const Transaction = orm.define('transaction', {
   // foreign keys: userId, chefId
   status: Sequelize.STRING,
@@ -129,6 +135,7 @@ const Transaction = orm.define('transaction', {
   },
 });
 
+// Fredrick
 const User = orm.define('user', {
   name: Sequelize.STRING,
   username: Sequelize.STRING,

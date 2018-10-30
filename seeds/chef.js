@@ -26,20 +26,20 @@ var db = require('../db.js');
 // var fakeData = new Array(100);
 // Promise.each([{}, {}], function (item) {
 // Promise.each(fakeData, function () {
-Promise.each(new Array(100), function () {    
+module.exports = () => Promise.each(new Array(100), function () {
 
     let item = {};
 
-    item.randomCity = faker.address.city();
-    item.randomDescription = faker.commerce.productAdjective();
-    item.randomEmail = faker.internet.email();
-    item.randomImageUrl = faker.image.imageUrl();
-    item.randomName = faker.name.findName();
-    item.randomPassword = faker.internet.randomPassword();
-    item.randomUsername = faker.internet.userName();
-    item.randomState = faker.address.state();
-    item.randomStreetAddress = faker.address.streetAddress();
-    item.randomZip = faker.address.zipCode();
+    item.city = faker.address.city();
+    item.description = faker.commerce.productAdjective();
+    item.email = faker.internet.email();
+    item.imageUrl = faker.image.imageUrl();
+    item.name = faker.name.findName();
+    item.password = faker.internet.password();
+    item.username = faker.internet.userName();
+    item.state = faker.address.state();
+    item.streetAddress = faker.address.streetAddress();
+    item.zip = faker.address.zipCode();
 
     // return db.create(item).save();
     return db.Chef.create(item);

@@ -24,9 +24,9 @@ Promise.each(new Array(50), function () {
   let item = {};
   item.name = faker.name.firstName();
   item.username = faker.name.firstName();
-  item.authId = faker.id();
+  item.authId = Math.floor(Math.random() * 100); // faker.id();
   item.email = faker.internet.email();
-  item.imageUrl = faker.imageUrl();
+  item.imageUrl = faker.image.imageUrl();
   item.createdAt = faker.date.past();
   item.updatedAt = faker.date.recent();
 

@@ -31,7 +31,7 @@ const Chef = orm.define('chef', {
   username: Sequelize.STRING,
   stateName: Sequelize.TEXT,
   streetAddress: Sequelize.TEXT,
-  zip: Sequelize.INTEGER,
+  zip: Sequelize.STRING,
   createdAt: {
     type: 'TIMESTAMP',
     allowNull: false,
@@ -57,7 +57,7 @@ const Event = orm.define('event', {
     allowNull: false,
   },
 });
- 
+
 
 const ItemEvent = orm.define('itemEvent', {
   // foreign keys: eventId, menuItemId, chefId
@@ -155,7 +155,7 @@ const User = orm.define('user', {
 // /* //////////////////////////// */
 // /* RELATIONSHIPS (alphabetized) */
 // /* //////////////////////////// */
-// Event.belongsTo(Chef);
+Event.belongsTo(Chef);
 
 // ItemEvent.belongsTo(MenuItem);
 // ItemEvent.belongsTo(Event);
@@ -182,9 +182,9 @@ exports.connection = orm;
 exports.Chef = Chef;
 exports.Event = Event;
 exports.ItemEvent = ItemEvent;
+exports.Rating = Rating;
 exports.MenuItem = MenuItem;
 exports.Order = Order;
-exports.Rating = Rating;
 exports.Transaction = Transaction;
 exports.User = User;
 

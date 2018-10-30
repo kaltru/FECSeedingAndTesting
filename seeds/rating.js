@@ -1,4 +1,5 @@
-var db = ('../db.js');
+const db = require('../db.js');
+const faker = require('faker');
 
 var randomName = faker.name.findName()
 
@@ -18,12 +19,13 @@ var randomName = faker.name.findName()
 //   },
 // });
 
-Promise.each([{}, {}], function (item) {
-  var stars = faker.random.number();
-  var review = faker.random.words();
-  return db.create(item).save();
+Promise.each(new Array(50), function () {
+  var stars = Math.floor(Math.random() * 5);
+  var review = faker.lorem.paragraph();
+  return db.Rating.create({stars, review});
 }).then(function (data) {
   // data is an Array with the returned values of all promises
+  console.log('Ratings seeded')
 })
 
 
